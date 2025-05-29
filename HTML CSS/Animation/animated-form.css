@@ -1,0 +1,129 @@
+ /* Reset default spacing and set box-sizing */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Set background color and font */
+  body {
+    background-color: rgb(34, 6, 65);
+    font-family: sans-serif;
+    color: white;
+  }
+
+  /* Form container layout */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 90%;
+    max-width: 500px;
+    margin: 6rem auto;
+  }
+
+  /* Fancy animated input box */
+  .fancy {
+    position: relative;
+    background-color: rgb(55, 21, 90); /* Purple background */
+    border-radius: 50px;
+    height: 75px;
+    width: 100%;
+    --offset: 3px;
+    overflow: hidden;
+  }
+
+  /* Text input inside the fancy box */
+  .fancy input {
+    background: transparent;
+    color: white;
+    font-size: 1.3rem;
+    position: absolute;
+    z-index: 10;
+    padding: 1.5rem;
+    inset: 0;
+    border: none;
+    outline: none;
+  }
+
+  /* Animated conic border layer */
+  .fancy::before {
+    content: '';
+    background: conic-gradient(transparent 270deg, white, transparent);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    width: 200%;
+    animation: rotate 2s linear infinite;
+    filter: blur(5px);
+  }
+
+  /* Inner masking to show border only around edge */
+  .fancy::after {
+    content: '';
+    background-color: rgb(55, 21, 90); /* Match container */
+    border-radius: inherit;
+    position: absolute;
+    inset: var(--offset);
+  }
+
+  /* Rotation animation for the border */
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0turn);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(1turn);
+    }
+  }
+
+  /* Glow on input focus */
+  .fancy input:focus {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Grouping for checkboxes, radios, and select */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background-color: rgb(55, 21, 90);
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .input-group label {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Dropdown styling */
+  .input-group select {
+    padding: 0.6rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(75, 35, 115);
+    color: white;
+  }
+
+  /* Submit button styling */
+  .submit-btn {
+    background-color: white;
+    color: rgb(34, 6, 65);
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    transform: scale(1.05);
+  }

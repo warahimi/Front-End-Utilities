@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="animated-form.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="form-container">
+        <!-- Text Inputs -->
+        <div class="fancy">
+            <input type="text" name="first-name" placeholder="First Name" required />
+        </div>
+
+        <div class="fancy">
+            <input type="text" name="last-name" placeholder="Last Name" required />
+        </div>
+
+        <div class="fancy">
+            <input type="email" name="email" placeholder="Email Address" required />
+        </div>
+
+        <!-- Radio Buttons -->
+        <div class="input-group">
+            <label>Gender:</label>
+            <label><input type="radio" name="gender" value="male" required /> Male</label>
+            <label><input type="radio" name="gender" value="female" /> Female</label>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="input-group">
+            <label>Hobbies:</label>
+            <label><input type="checkbox" name="hobby" value="reading" /> Reading</label>
+            <label><input type="checkbox" name="hobby" value="sports" /> Sports</label>
+            <label><input type="checkbox" name="hobby" value="music" /> Music</label>
+        </div>
+
+        <!-- Dropdown -->
+        <div class="input-group">
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">-- Select Country --</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ca">Canada</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</body>
+
+</html>

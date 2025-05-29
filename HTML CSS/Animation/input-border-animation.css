@@ -1,0 +1,75 @@
+/* Reset default browser padding and margin, set box-sizing to border-box for predictable sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set the background color for the whole page */
+  body {
+    background-color: rgb(34, 6, 65);
+  }
+  
+  /* Container for the input with styling and animation setup */
+  .fancy {
+    position: relative; /* Needed for absolute positioning of ::before and ::after */
+    background-color: rgb(55, 21, 90); /* Dark purple background */
+    border-radius: 50px; /* Rounded corners */
+    height: 75px;
+    width: 400px;
+    max-width: 100%;
+    --offset: 3px; /* Used for inner border offset */
+    overflow: hidden; /* Hide animated border overflow */
+    margin: 10rem auto; /* Center vertically with top margin */
+  }
+  
+  /* Style the input field inside the fancy container */
+  .fancy input {
+    background: transparent; /* Transparent background to show effects underneath */
+    color: white; /* White text */
+    font-size: 1.5rem;
+    position: absolute; /* Positioned to fill the container */
+    z-index: 10; /* Above animated borders */
+    padding: 1.5rem;
+    inset: 0; /* top: 0; bottom: 0; left: 0; right: 0; */
+    border: none;
+    outline: none;
+  }
+  
+  /* Create the animated rotating border using conic gradient */
+  .fancy::before {
+    content: '';
+    background: conic-gradient(transparent 270deg, white, transparent); /* Rotating gradient */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center it */
+    aspect-ratio: 1;
+    width: 200%;
+    animation: rotate 2s linear infinite; /* Infinite rotation */
+    filter: blur(5px); /* Glow effect */
+  }
+  
+  /* Add an overlay to cover the rotating border inside the container */
+  .fancy::after {
+    content: '';
+    background-color: rgb(55, 21, 90); /* Same as container */
+    border-radius: inherit;
+    position: absolute;
+    inset: var(--offset); /* Creates the inner cutout to show border */
+  }
+  
+  /* Keyframes for the rotation animation */
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0turn);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(1turn);
+    }
+  }
+  
+  /* Glow around the input when focused */
+  .fancy input:focus {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+  }
