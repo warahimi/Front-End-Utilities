@@ -1,0 +1,12 @@
+@import "tailwindcss";
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #ced3d2;
+}
+
+
+.c-animate{
+  @apply hover:scale-[1.03] active:scale-[0.98] transition-all ease-in-out duration-75
+}
