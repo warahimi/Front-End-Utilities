@@ -1,0 +1,13 @@
+@import "tailwindcss";
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.custom-border{
+  @apply border-2 border-gray-200 p-4 m-4
+}
+.custom-btn-animation{
+  @apply hover:scale-[1.02] active:scale-[0.98] transition-all ease-in-out duration-75
+}
