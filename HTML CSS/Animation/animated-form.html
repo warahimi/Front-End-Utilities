@@ -54,4 +54,116 @@
     </form>
 </body>
 
+
+<!-- Using Tailwindcss -->
+
+
+
+<!-- 
+<body class="bg-purple-950 min-h-screen flex items-center justify-center">
+    <form class="w-full max-w-md bg-purple-900 p-8 rounded-2xl space-y-6 shadow-lg">
+        <div class="relative">
+            <input type="text" name="first-name" placeholder="First Name" required
+                class="w-full bg-transparent border border-white/20 rounded-full px-6 py-4 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white transition-all duration-300" />
+        </div>
+
+        <div class="relative">
+            <input type="text" name="last-name" placeholder="Last Name" required
+                class="w-full bg-transparent border border-white/20 rounded-full px-6 py-4 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white transition-all duration-300" />
+        </div>
+
+        <div class="relative">
+            <input type="email" name="email" placeholder="Email Address" required
+                class="w-full bg-transparent border border-white/20 rounded-full px-6 py-4 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white transition-all duration-300" />
+        </div>
+
+        <fieldset class="text-white space-y-2">
+            <legend class="font-semibold">Gender:</legend>
+            <label class="flex items-center gap-2">
+                <input type="radio" name="gender" value="male" class="accent-white" />
+                Male
+            </label>
+            <label class="flex items-center gap-2">
+                <input type="radio" name="gender" value="female" class="accent-white" />
+                Female
+            </label>
+        </fieldset>
+
+        <fieldset class="text-white space-y-2">
+            <legend class="font-semibold">Hobbies:</legend>
+            <label class="flex items-center gap-2">
+                <input type="checkbox" name="hobby" value="reading" class="accent-white" />
+                Reading
+            </label>
+            <label class="flex items-center gap-2">
+                <input type="checkbox" name="hobby" value="sports" class="accent-white" />
+                Sports
+            </label>
+            <label class="flex items-center gap-2">
+                <input type="checkbox" name="hobby" value="music" class="accent-white" />
+                Music
+            </label>
+        </fieldset>
+
+        <div>
+            <label for="country" class="block text-white mb-1 font-semibold">Country:</label>
+            <select name="country" id="country" required
+                class="w-full bg-purple-800 border border-white/20 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-white">
+                <option value="">-- Select Country --</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ca">Canada</option>
+            </select>
+        </div>
+
+        <button type="submit"
+            class="w-full bg-white text-purple-900 font-semibold text-lg rounded-full py-3 hover:bg-opacity-90 transition duration-300">
+            Submit
+        </button>
+    </form>
+</body>
+
+
+✨ If You Want the Animated Border Like Before:
+You can write a little custom CSS like this in your project’s CSS file:
+
+css
+Copy
+Edit
+@layer utilities {
+  .conic-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .conic-border::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    aspect-ratio: 1;
+    background: conic-gradient(transparent 270deg, white, transparent);
+    transform: translate(-50%, -50%);
+    animation: spin 2s linear infinite;
+    filter: blur(5px);
+    z-index: 0;
+  }
+
+  .conic-border > input {
+    position: relative;
+    z-index: 10;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0turn);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(1turn);
+    }
+  }
+}
+And then apply conic-border to your Tailwind input wrapper. -->
+
 </html>
