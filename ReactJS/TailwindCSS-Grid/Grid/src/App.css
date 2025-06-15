@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 80px auto 1fr auto 80px;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-areas:
+      "header header     header     header     header"
+      "left   banner     banner     banner     right"
+      "left   main       main       main       right"
+      "left   low-content low-content low-content right"
+      "footer footer     footer     footer     footer";
+    height: 100vh;
+    gap: 8px;
+  }
+
+  .area-header {
+    grid-area: header;
+  }
+  .area-banner {
+    grid-area: banner;
+  }
+  .area-left {
+    grid-area: left;
+  }
+  .area-main {
+    grid-area: main;
+  }
+  .area-right {
+    grid-area: right;
+  }
+  .area-low {
+    grid-area: low-content;
+  }
+  .area-footer {
+    grid-area: footer;
+  }
+}
+
+/* ✅ Mobile layout: normal stacking */
+@media (max-width: 678px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "banner"
+      "left"
+      "main"
+      "right"
+      "low-content"
+      "footer";
+  }
+}
