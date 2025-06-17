@@ -14,7 +14,7 @@ function Form({ todos, setTodos }) {
       <form
         action=""
         onSubmit={handleSubmit}
-        className="bg-white shadow-2xl mt-10 flex p-10 m-3 rounded-2xl"
+        className="bg-white shadow-2xl mt-10 flex p-10 m-3 rounded-2xl flex-col justify-center items-center md:flex-row transition-all ease-in-out"
       >
         <input
           type="text"
@@ -27,7 +27,7 @@ function Form({ todos, setTodos }) {
         />
         <button
           type="submit"
-          className="border-2 border-gray-300 p-4 rounded-2xl h-20 w-50 m-2 bg-pink-400 text-3xl font-bold text-white hover:bg-pink-500 hover:border-2 hover:border-gray-400"
+          className="border-2 border-gray-300 p-4 rounded-2xl h-20 w-50 m-2 bg-amber-400 text-3xl font-bold text-white hover:bg-amber-500 hover:border-2 hover:border-gray-400"
         >
           Add
         </button>

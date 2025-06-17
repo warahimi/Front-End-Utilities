@@ -6,15 +6,17 @@ import Footer from "./Footer";
 
 const Todo = () => {
   const [todos, setTodos] = useState([]);
-  const countCompletedTodos = () => {
-    return todos.filter((todo) => todo.isComplete).length;
-  };
+  const completedTodos = todos.filter((todo) => todo.isComplete).length;
+  const totalTodos = todos.length;
+  const sortedTodo = todos.sort((todo1, todo2) => {
+    return Number(todo1.isComplete) - Number(todo2.isComplete);
+  });
 
   return (
     <div>
       <Form todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} setTodos={setTodos} />
-      <Footer countCompletedTodos={countCompletedTodos} />
+      <TodoList todos={sortedTodo} setTodos={setTodos} />
+      <Footer completedTodos={completedTodos} totalTodos={totalTodos} />
     </div>
   );
 };
