@@ -1,23 +1,20 @@
 import React, { useState } from "react";
+import TodoItem from "./TodoItem";
+import Form from "./Form";
+import TodoList from "./TodoList";
+import Footer from "./Footer";
 
 const Todo = () => {
-  const [todo, setTodo] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const [todos, setTodos] = useState([]);
+  const countCompletedTodos = () => {
+    return todos.filter((todo) => todo.isComplete).length;
   };
+
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter a todo"
-          value={todo}
-          onChange={(e) => {
-            setTodo(e.target.value);
-          }}
-        />
-        <button type="submit">Add</button>
-      </form>
+      <Form todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} />
+      <Footer countCompletedTodos={countCompletedTodos} />
     </div>
   );
 };
