@@ -1,11 +1,11 @@
 import React from "react";
 import FoodItem from "./FoodItem";
 
-function FoodList({ foodData }) {
+function FoodList({ foodData, setFoodId }) {
   return (
     <div>
       {foodData.map((food, index) => (
-        <FoodItem key={index} food={food} />
+        <FoodItem key={index} food={food} setFoodId={setFoodId} />
       ))}
     </div>
   );
