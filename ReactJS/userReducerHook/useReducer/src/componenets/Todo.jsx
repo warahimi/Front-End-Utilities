@@ -10,7 +10,9 @@ function Todo({ todo, index, dispatch }) {
 
   return (
     <div>
-      {todo.name} : {todo.complete ? "Complete" : "Not Complete"}
+      <span className={`${todo.complete ? "text-gray-800 line-through" : ""}`}>
+        {todo.name} : {todo.complete ? "Complete" : "Not Complete"}
+      </span>
       <input
         type="checkbox"
         checked={todo.complete}

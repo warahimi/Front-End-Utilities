@@ -18,7 +18,7 @@ const App = () => {
           {/** Left Side of the Screen */}
           <FoodList foodData={foodData} setFoodId={setFoodId} />
         </InnerContainer>
-        <InnerContainer>
+        <InnerContainer className="fixed top-0">
           {/** Right Side of the Screen */}
           <FoodDetails foodId={foodId} />
         </InnerContainer>
